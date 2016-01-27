@@ -1,4 +1,4 @@
-freemapkapor.jar;http://downloads.sourceforge.net/project/freemapkapor/0.0.8/freemapkapor.jar?use_mirror=ignum
+freemapkapor.jar;https://raw.githubusercontent.com/FreemapSlovakia/freemapKaPor/master/josmplugin/release/freemapkapor.jar
 	Manifest-Version: 1.0
 	Plugin-Class: sk.freemap.kapor.KaporPlugin
 	Plugin-Description: Import data from SK Cadastral portal
