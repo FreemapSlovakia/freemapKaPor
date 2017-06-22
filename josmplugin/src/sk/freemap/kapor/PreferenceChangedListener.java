@@ -9,10 +9,8 @@ public class PreferenceChangedListener implements
 
 	@Override
 	public void preferenceChanged(PreferenceChangeEvent e) {
-		PreferenceChangeEvent<String> event = 
-				(PreferenceChangeEvent<String>)e;
-		if (event.getKey() == FREEMAPKAPOR_MWFURL) {
-			KaporPlugin.mwfUrl = event.getNewValue().getValue();
+		if (e.getKey() == FREEMAPKAPOR_MWFURL) {
+			KaporPlugin.mwfUrl = (String) e.getNewValue().getValue();
 		}
 	}
 

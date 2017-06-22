@@ -33,8 +33,7 @@ public class ExportPanel extends JPanel {
 				return false;
 
 			if (dataset.getNodes().size() > 0)
-				Main.main.addLayer(new OsmDataLayer(dataset, OsmDataLayer
-						.createNewName(), null));
+				Main.getLayerManager().addLayer(new OsmDataLayer(dataset, OsmDataLayer.createNewName(), null));
 
 			return true;
 

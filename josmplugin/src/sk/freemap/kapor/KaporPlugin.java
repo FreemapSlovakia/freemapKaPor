@@ -22,9 +22,13 @@ public class KaporPlugin extends Plugin implements PreferenceKeys {
 		super(info);
 		mwfUrl = Main.pref.get(FREEMAPKAPOR_MWFURL);
 		if (mwfUrl == null || mwfUrl.length() == 0) {
-			mwfUrl = "http://195.28.70.134/kapor2/maps/mapa.mwf";
+			// mwfUrl = "http://195.28.70.134/kapor2/maps/mapa.mwf";
+			mwfUrl = "https://195.28.70.133/kapor2/maps/mapa.mwf";			
 			Main.pref.put(FREEMAPKAPOR_MWFURL, mwfUrl);
 		}
+		
+		SSLUtilities.trustAllHostnames();
+		SSLUtilities.trustAllHttpsCertificates();
 
 		Projection.initCRS();
 		Projection.initGrid();

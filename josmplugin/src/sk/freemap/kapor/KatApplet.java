@@ -50,4 +50,9 @@ public class KatApplet extends MGMapApplet implements MGMapContext {
 			return null;
 		}
 	}
+	
+	@Override
+	public String getName() {
+		return "Kapor Plugin";
+	}
 }
