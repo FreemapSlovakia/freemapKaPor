@@ -4,5 +4,6 @@ Plugin-Description: Import data from SK Cadastral portal
 Plugin-Icon: images/preferences/kapor2.png
 Plugin-Link: http://sourceforge.net/projects/freemapkapor/
 sk_Plugin-Description: Načítavanie vektorových údajov z katastrálneho portalu SR
-Plugin-Mainversion: 5576
-Plugin-Version: 53
+Plugin-Requires: jts;geotools
+Plugin-Mainversion: 10899
+Plugin-Version: 54
