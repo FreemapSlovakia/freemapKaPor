@@ -6,6 +6,7 @@ import javax.swing.JMenuItem;
 
 import org.opengis.referencing.FactoryException;
 import org.openstreetmap.josm.Main;
+import org.openstreetmap.josm.gui.MainApplication;
 import org.openstreetmap.josm.gui.NavigatableComponent;
 import org.openstreetmap.josm.gui.preferences.PreferenceSetting;
 import org.openstreetmap.josm.plugins.Plugin;
@@ -35,7 +36,7 @@ public class KaporPlugin extends Plugin implements PreferenceKeys {
 
 		JMenuItem menuItem = new JMenuItem("Kapor");
 		menuItem.addActionListener(new KaporMenuActionListener());
-		Main.main.menu.add(menuItem);
+		MainApplication.getMenu().add(menuItem);
 
 		NavigatableComponent
 				.addZoomChangeListener(new KaporZoomChangeListener());

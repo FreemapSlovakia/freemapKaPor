@@ -1,13 +1,14 @@
 package sk.freemap.kapor;
 
+import org.geotools.geometry.jts.JTS;
 import org.opengis.referencing.operation.TransformException;
-import org.openstreetmap.josm.Main;
 import org.openstreetmap.josm.data.Bounds;
 import org.openstreetmap.josm.data.coor.EastNorth;
 import org.openstreetmap.josm.data.coor.LatLon;
+import org.openstreetmap.josm.gui.MainApplication;
+import org.openstreetmap.josm.gui.MapFrame;
+import org.openstreetmap.josm.gui.MapView;
 import org.openstreetmap.josm.gui.NavigatableComponent.ZoomChangeListener;
-
-import org.geotools.geometry.jts.JTS;
 
 import com.vividsolutions.jts.geom.Coordinate;
 
@@ -15,7 +16,7 @@ public class KaporZoomChangeListener implements ZoomChangeListener {
 
 	@Override
 	public void zoomChanged() {
-		if (Main.map != null && KaporMenuActionListener.applet != null
+		if (MainApplication.getMap() != null && KaporMenuActionListener.applet != null
 				&& KaporMenuActionListener.frame.isVisible()) {
 			KaporZoomChangeListener.setAppletZoom();
 		}
@@ -24,12 +25,14 @@ public class KaporZoomChangeListener implements ZoomChangeListener {
 	public static void setAppletZoom() {
 
 		KatApplet applet = KaporMenuActionListener.applet;
-		if (Main.map != null && applet != null) {
-			EastNorth center = Main.map.mapView.getCenter();
-			LatLon centerLatLon = Main.map.mapView.getProjection()
+		MapFrame map = MainApplication.getMap();
+		if (map != null && applet != null) {
+			MapView mapView = map.mapView;
+			EastNorth center = mapView.getCenter();
+			LatLon centerLatLon = mapView.getProjection()
 					.eastNorth2latlon(center);
 
-			Bounds b = Main.map.mapView.getRealBounds();
+			Bounds b = mapView.getRealBounds();
 			LatLon p1 = b.getMin(), p2 = b.getMax();
 
 			double x = centerLatLon.getX();

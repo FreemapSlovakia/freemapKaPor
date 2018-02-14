@@ -1,11 +1,10 @@
 package sk.freemap.kapor;
 
+import org.openstreetmap.josm.spi.preferences.PreferenceChangeEvent;
+
 import sk.freemap.kapor.preferences.PreferenceKeys;
 
-import org.openstreetmap.josm.data.Preferences.PreferenceChangeEvent;
-
-public class PreferenceChangedListener implements
-		org.openstreetmap.josm.data.Preferences.PreferenceChangedListener, PreferenceKeys {
+public class PreferenceChangedListener implements org.openstreetmap.josm.spi.preferences.PreferenceChangedListener, PreferenceKeys {
 
 	@Override
 	public void preferenceChanged(PreferenceChangeEvent e) {
