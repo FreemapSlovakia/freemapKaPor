@@ -14,8 +14,6 @@ import org.openstreetmap.josm.gui.preferences.DefaultTabPreferenceSetting;
 import org.openstreetmap.josm.gui.preferences.PreferenceTabbedPane;
 import org.openstreetmap.josm.tools.GBC;
 
-import sk.freemap.kapor.preferences.PreferenceKeys;
-
 public class KaporPreferenceSetting extends DefaultTabPreferenceSetting implements PreferenceKeys {
 	JCheckBox prefExportName;
 	
@@ -46,7 +44,7 @@ public class KaporPreferenceSetting extends DefaultTabPreferenceSetting implemen
 	 */
 	@Override
 	public boolean ok() {
-		Main.pref.put(FREEMAPKAPOR_EXPORT_NAME, prefExportName.isSelected());
+		Main.pref.putBoolean(FREEMAPKAPOR_EXPORT_NAME, prefExportName.isSelected());
 		return false;
 	}
 

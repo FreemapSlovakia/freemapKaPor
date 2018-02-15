@@ -6,8 +6,8 @@ import java.awt.Event;
 import javax.swing.JPanel;
 
 import org.opengis.referencing.operation.TransformException;
-import org.openstreetmap.josm.Main;
 import org.openstreetmap.josm.data.osm.DataSet;
+import org.openstreetmap.josm.gui.MainApplication;
 import org.openstreetmap.josm.gui.layer.OsmDataLayer;
 
 public class ExportPanel extends JPanel {
@@ -19,6 +19,7 @@ public class ExportPanel extends JPanel {
 		add("East", new Button("Budovy"));
 	}
 
+	@Override
 	public boolean action(Event evt, Object arg) {
 		try {
 			KatApplet map = KaporMenuActionListener.applet;
@@ -32,9 +33,9 @@ public class ExportPanel extends JPanel {
 			else
 				return false;
 
-			if (dataset.getNodes().size() > 0)
-				Main.getLayerManager().addLayer(new OsmDataLayer(dataset, OsmDataLayer.createNewName(), null));
-
+			if (dataset.getNodes().size() > 0) {
+				MainApplication.getLayerManager().addLayer(new OsmDataLayer(dataset, OsmDataLayer.createNewName(), null));
+			}
 			return true;
 
 		} catch (TransformException e) {

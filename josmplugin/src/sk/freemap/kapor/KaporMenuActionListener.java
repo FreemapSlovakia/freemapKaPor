@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 
-import org.openstreetmap.josm.Main;
+import org.openstreetmap.josm.gui.MainApplication;
 
 public class KaporMenuActionListener implements ActionListener {
 
@@ -30,7 +30,7 @@ public class KaporMenuActionListener implements ActionListener {
 
 		frame.setVisible(true);
 
-		if (Main.map != null) {
+		if (MainApplication.getMap() != null) {
 			KaporZoomChangeListener.setAppletZoom();
 		}
 	}
