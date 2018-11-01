@@ -9,9 +9,9 @@ import javax.swing.BorderFactory;
 import javax.swing.JCheckBox;
 import javax.swing.JPanel;
 
-import org.openstreetmap.josm.Main;
 import org.openstreetmap.josm.gui.preferences.DefaultTabPreferenceSetting;
 import org.openstreetmap.josm.gui.preferences.PreferenceTabbedPane;
+import org.openstreetmap.josm.spi.preferences.Config;
 import org.openstreetmap.josm.tools.GBC;
 
 public class KaporPreferenceSetting extends DefaultTabPreferenceSetting implements PreferenceKeys {
@@ -31,7 +31,7 @@ public class KaporPreferenceSetting extends DefaultTabPreferenceSetting implemen
         JPanel settingsPanel = new JPanel(new GridBagLayout());
         settingsPanel.setBorder(BorderFactory.createEmptyBorder(5,5,5,5));
         
-        prefExportName = new JCheckBox("Export names.", Main.pref.getBoolean(FREEMAPKAPOR_EXPORT_NAME, false));
+        prefExportName = new JCheckBox("Export names.", Config.getPref().getBoolean(FREEMAPKAPOR_EXPORT_NAME, false));
         settingsPanel.add(prefExportName, GBC.eol());
 
         //JPanel tab = gui.createPreferenceTab("kapor2", "Kapor2 Plugin", "Kapor2 exporting of cadastral data");
@@ -44,7 +44,7 @@ public class KaporPreferenceSetting extends DefaultTabPreferenceSetting implemen
 	 */
 	@Override
 	public boolean ok() {
-		Main.pref.putBoolean(FREEMAPKAPOR_EXPORT_NAME, prefExportName.isSelected());
+		Config.getPref().putBoolean(FREEMAPKAPOR_EXPORT_NAME, prefExportName.isSelected());
 		return false;
 	}
 

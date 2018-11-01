@@ -5,5 +5,5 @@ Plugin-Icon: images/preferences/kapor2.png
 Plugin-Link: http://sourceforge.net/projects/freemapkapor/
 sk_Plugin-Description: Načítavanie vektorových údajov z katastrálneho portalu SR
 Plugin-Requires: jts;geotools
-Plugin-Mainversion: 10899
-Plugin-Version: 54
+Plugin-Mainversion: 14382
+Plugin-Version: 55

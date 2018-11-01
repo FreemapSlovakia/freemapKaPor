@@ -8,10 +8,10 @@ import java.util.List;
 import java.util.Vector;
 
 import org.opengis.referencing.operation.TransformException;
-import org.openstreetmap.josm.Main;
 import org.openstreetmap.josm.data.osm.DataSet;
 import org.openstreetmap.josm.data.osm.Node;
 import org.openstreetmap.josm.data.osm.Way;
+import org.openstreetmap.josm.spi.preferences.Config;
 
 import sk.freemap.kapor.preferences.PreferenceKeys;
 
@@ -28,7 +28,7 @@ public class ExportAll implements PreferenceKeys {
 
 		NodeCollection allNodes = new NodeCollection(dataset);
 		
-		final boolean exportNames = Main.pref.getBoolean(FREEMAPKAPOR_EXPORT_NAME, false);
+		final boolean exportNames = Config.getPref().getBoolean(FREEMAPKAPOR_EXPORT_NAME, false);
 		
 
 		Vector<MGMapLayer> layers = map.getMapLayers();

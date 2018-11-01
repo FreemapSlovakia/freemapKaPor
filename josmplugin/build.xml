@@ -1,13 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<project default="default" name="Create Runnable Jar for Project JOSM">
-	<!--this file was created by Eclipse Runnable JAR Export Wizard-->
-	<!--ANT 1.7 is required                                        -->
-	<target name="default">
-		<!--        <jar destfile="/home/martin/k.jar" filesetmanifest="mergewithoutmain">-->
-		<jar destfile="/home/martin/.josm/plugins/freemapkapor.jar" filesetmanifest="mergewithoutmain" manifest="bin/META-INF/MANIFEST.MF">
+<project name="freemapkapor" default="compile" basedir=".">
+	<path id="project-classpath">
+		<fileset dir="../../josm/core/dist" includes="*.jar"/>
+		<fileset dir="../userlibs/geotools-9.3" includes="*.jar"/>
+		<fileset dir="../userlibs" includes="*.zip"/>
+	</path>
+
+	<target name="clean">
+		<delete dir="bin"/>
+		<mkdir dir="bin"/>
+	</target>
+
+	<target name="compile" depends="clean">
+		<javac srcdir="src" destdir="bin" classpathref="project-classpath"/>
+
+		<jar destfile="release/freemapkapor.jar" filesetmanifest="mergewithoutmain" manifest="src/META-INF/MANIFEST.MF">
 			<fileset dir="bin"/>
 			<fileset dir="." includes="images/**"/>
-			
+			<fileset dir="src" includes="projdata/**"/>	
 			<zipfileset src="../userlibs/mgjava.zip"/>
 				
 		</jar>
