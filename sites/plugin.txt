@@ -5,5 +5,5 @@ freemapkapor.jar;https://raw.githubusercontent.com/FreemapSlovakia/freemapKaPor/
 	Plugin-Icon: images/preferences/kapor2.png
 	Plugin-Link: https://github.com/FreemapSlovakia/freemapKaPor/tree/master/josmplugin
 	sk_Plugin-Description: Načítavanie vektorových údajov z katastrálneho portálu SR
-	Plugin-Mainversion: 14382
-	Plugin-Version: 55
+	Plugin-Mainversion: 14824
+	Plugin-Version: 56

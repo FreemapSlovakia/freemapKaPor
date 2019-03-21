@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
-	<classpathentry kind="lib" path="/home/martin/workspace/josm/core/dist/josm-custom.jar" sourcepath="/home/martin/workspace/josm/core/src"/>
 	<classpathentry kind="lib" path="/home/martin/freemapKaPor/userlibs/geotools-9.3/batik-transcoder-1.7.jar"/>
 	<classpathentry kind="lib" path="/home/martin/freemapKaPor/userlibs/geotools-9.3/common-2.6.0.jar"/>
 	<classpathentry kind="lib" path="/home/martin/freemapKaPor/userlibs/geotools-9.3/commons-beanutils-1.7.0.jar"/>
@@ -176,5 +174,8 @@
 	<classpathentry kind="lib" path="/home/martin/freemapKaPor/userlibs/geotools-9.3/xpp3_min-1.1.4c.jar"/>
 	<classpathentry kind="lib" path="/home/martin/freemapKaPor/userlibs/geotools-9.3/xsd-2.6.0.jar"/>
 	<classpathentry kind="lib" path="/home/martin/freemapKaPor/userlibs/mgjava.zip"/>
+	<classpathentry kind="lib" path="/home/martin/josm-tested.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="lib" path="/home/martin/.josm/plugins/geotools.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

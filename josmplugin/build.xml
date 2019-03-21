@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <project name="freemapkapor" default="compile" basedir=".">
 	<path id="project-classpath">
-		<fileset dir="../../josm/core/dist" includes="*.jar"/>
+		<fileset dir="/home/martin" includes="josm-latest.jar"/>
 		<fileset dir="../userlibs/geotools-9.3" includes="*.jar"/>
 		<fileset dir="../userlibs" includes="*.zip"/>
 	</path>
