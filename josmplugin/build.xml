@@ -19,7 +19,7 @@
 			<fileset dir="." includes="images/**"/>
 			<fileset dir="src" includes="projdata/**"/>
 			<zipfileset src="../userlibs/mgjava.zip"/>
-
+			<zipfileset includes="**/*.class" src="../userlibs/geotools-9.3/jts-1.13.jar"/>
 		</jar>
 	</target>
 </project>
