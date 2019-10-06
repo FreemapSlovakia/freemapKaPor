@@ -17,15 +17,15 @@ import org.openstreetmap.josm.data.osm.Way;
 import com.autodesk.mgjava.MGMapApplet;
 import com.autodesk.mgjava.MGMapLayer;
 import com.autodesk.mgjava.MGMapObject;
-import com.vividsolutions.jts.geom.Coordinate;
-import com.vividsolutions.jts.geom.Geometry;
-import com.vividsolutions.jts.geom.GeometryCollection;
-import com.vividsolutions.jts.geom.GeometryFactory;
-import com.vividsolutions.jts.geom.Point;
-import com.vividsolutions.jts.geom.Polygon;
-import com.vividsolutions.jts.geom.Polygonal;
-import com.vividsolutions.jts.geom.prep.PreparedPolygon;
-import com.vividsolutions.jts.operation.polygonize.Polygonizer;
+import org.locationtech.jts.geom.Coordinate;
+import org.locationtech.jts.geom.Geometry;
+import org.locationtech.jts.geom.GeometryCollection;
+import org.locationtech.jts.geom.GeometryFactory;
+import org.locationtech.jts.geom.Point;
+import org.locationtech.jts.geom.Polygon;
+import org.locationtech.jts.geom.Polygonal;
+import org.locationtech.jts.geom.prep.PreparedPolygon;
+import org.locationtech.jts.operation.polygonize.Polygonizer;
 
 public class ExportBudovy {
 	private static Pattern budova_patt = Pattern.compile("budova.*");
@@ -45,10 +45,10 @@ public class ExportBudovy {
 
 		{
 			Vector<MGMapObject> kladpar_objs = kladpar.getMapObjects();
-			
+
 			if (kladpar_objs == null)
 				return null;
-			
+
 			for (Enumeration<MGMapObject> objs_enum = kladpar_objs.elements(); objs_enum
 					.hasMoreElements();) {
 				MGMapObject obj = objs_enum.nextElement();
@@ -62,7 +62,7 @@ public class ExportBudovy {
 
 		{
 			Vector<MGMapObject> znacky_kl_objs = znacky_kl.getMapObjects();
-			
+
 			if (znacky_kl_objs == null)
 				return null;
 
@@ -111,7 +111,7 @@ public class ExportBudovy {
 		}
 
 		Vector<MGMapObject> zappar_objs = zappar.getMapObjects();
-		
+
 		if (zappar_objs == null)
 			return null;
 

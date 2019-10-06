@@ -9,8 +9,8 @@ import java.util.Vector;
 import com.autodesk.mgjava.MGMap;
 import com.autodesk.mgjava.MGMapLayer;
 import com.autodesk.mgjava.MGMapObject;
-import com.vividsolutions.jts.geom.Geometry;
-import com.vividsolutions.jts.io.WKBWriter;
+import org.locationtech.jts.geom.Geometry;
+import org.locationtech.jts.io.WKBWriter;
 
 public class Exporter {
 	public Connection conn = null;

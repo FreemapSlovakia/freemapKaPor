@@ -6,13 +6,13 @@ import com.autodesk.mgjava.MGCollection;
 import com.autodesk.mgjava.MGMapApplet;
 import com.autodesk.mgjava.MGMapObject;
 import com.autodesk.mgjava.MGPoint;
-import com.vividsolutions.jts.geom.Coordinate;
-import com.vividsolutions.jts.geom.CoordinateList;
-import com.vividsolutions.jts.geom.Geometry;
-import com.vividsolutions.jts.geom.GeometryFactory;
-import com.vividsolutions.jts.geom.LineString;
-import com.vividsolutions.jts.geom.LinearRing;
-import com.vividsolutions.jts.geom.Polygon;
+import org.locationtech.jts.geom.Coordinate;
+import org.locationtech.jts.geom.CoordinateList;
+import org.locationtech.jts.geom.Geometry;
+import org.locationtech.jts.geom.GeometryFactory;
+import org.locationtech.jts.geom.LineString;
+import org.locationtech.jts.geom.LinearRing;
+import org.locationtech.jts.geom.Polygon;
 
 public class Conversion {
 	private static GeometryFactory factory = new GeometryFactory();
@@ -40,7 +40,7 @@ public class Conversion {
 
 		if (vertices.size() == 0 || numberOfVertices.size() == 0)
 			return null;
-		
+
 		Coordinate[] coords = convert_vertices(vertices);
 
 		assert numberOfVertices.size() >= 1;

@@ -10,7 +10,7 @@ import org.openstreetmap.josm.gui.MapFrame;
 import org.openstreetmap.josm.gui.MapView;
 import org.openstreetmap.josm.gui.NavigatableComponent.ZoomChangeListener;
 
-import com.vividsolutions.jts.geom.Coordinate;
+import org.locationtech.jts.geom.Coordinate;
 
 public class KaporZoomChangeListener implements ZoomChangeListener {
 
@@ -44,7 +44,7 @@ public class KaporZoomChangeListener implements ZoomChangeListener {
 
 				try {
 					// Ignore difference between S-JTSK and S-JTSK/03
-					JTS.transform(new Coordinate(x, y), newcenter, 
+					JTS.transform(new Coordinate(x, y), newcenter,
 							Projection.etrs89_to_s_jtsk_03);
 
 					JTS.transform(new Coordinate(p1.getX(), p1.getY()), newp1,

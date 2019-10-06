@@ -20,16 +20,16 @@ import com.autodesk.mgjava.MGMapApplet;
 import com.autodesk.mgjava.MGMapLayer;
 import com.autodesk.mgjava.MGMapObject;
 import com.autodesk.mgjava.MGPoint;
-import com.vividsolutions.jts.geom.Coordinate;
+import org.locationtech.jts.geom.Coordinate;
 
 public class ExportAll implements PreferenceKeys {
 	public static DataSet exportAll(MGMapApplet map) throws TransformException {
 		DataSet dataset = new DataSet();
 
 		NodeCollection allNodes = new NodeCollection(dataset);
-		
+
 		final boolean exportNames = Config.getPref().getBoolean(FREEMAPKAPOR_EXPORT_NAME, false);
-		
+
 
 		Vector<MGMapLayer> layers = map.getMapLayers();
 		for (Enumeration<MGMapLayer> layers_enum = layers.elements(); layers_enum
@@ -56,7 +56,7 @@ public class ExportAll implements PreferenceKeys {
 					String obj_name = null;
 					if (exportNames)
 						obj_name = obj.getName();
-					
+
 					int vertices_size = vertices.size();
 					ArrayList<Node> nodes = new ArrayList<Node>(vertices_size);
 
@@ -95,10 +95,10 @@ public class ExportAll implements PreferenceKeys {
 								way.put("name", obj_name);
 
 							dataset.addPrimitive(way);
-						} else 
+						} else
 							if (segment.size() == 1 && obj_name != null)
 							{
-								final Node n = segment.getFirst(); 
+								final Node n = segment.getFirst();
 								n.put("source", "kapor2");
 								n.put("name", obj_name);
 							}

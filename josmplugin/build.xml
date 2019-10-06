@@ -2,7 +2,7 @@
 <project name="freemapkapor" default="compile" basedir=".">
 	<path id="project-classpath">
 		<fileset dir="/home/martin" includes="josm-latest.jar"/>
-		<fileset dir="../userlibs/geotools-9.3" includes="*.jar"/>
+		<fileset dir="../userlibs" includes="*.jar"/>
 		<fileset dir="../userlibs" includes="*.zip"/>
 	</path>
 
@@ -18,8 +18,9 @@
 			<fileset dir="bin"/>
 			<fileset dir="." includes="images/**"/>
 			<fileset dir="src" includes="projdata/**"/>
+			<zipfileset src="../userlibs/geotools.jar"/>
+			<zipfileset src="../userlibs/jts.jar"/>
 			<zipfileset src="../userlibs/mgjava.zip"/>
-			<zipfileset includes="**/*.class" src="../userlibs/geotools-9.3/jts-1.13.jar"/>
 		</jar>
 	</target>
 </project>
